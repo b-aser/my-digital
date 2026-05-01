@@ -1,0 +1,255 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --bg: #0a1008;
+  --bg2: #0f1a0d;
+  --green: #112b14;
+  --green2: #1a3d1e;
+  --yellow: #f5c100;
+  --yellow2: #ffd740;
+  --white: #f0f0e8;
+  --muted: rgba(240,240,232,0.45);
+  --border: rgba(245,193,0,0.15);
+  --font-display: Syne, sans-serif;
+  --font-body: DM Sans, sans-serif;
+  --font-syne: var(--font-syne), sans-serif;
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --font-sans: DM Sans, sans-serif;
+  --font-display: Syne, sans-serif;
+  --font-syne: Syne, sans-serif;
+  --color-background: var(--bg);
+  --color-foreground: var(--white);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button {
+    cursor: none;
+  }
+}
+
+/* Custom Cursor - only on desktop */
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: var(--yellow);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-follower {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--yellow);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.18s ease;
+  opacity: 0.5;
+}
+
+.cursor.hovered {
+  width: 20px;
+  height: 20px;
+}
+
+.cursor-follower.hovered {
+  width: 56px;
+  height: 56px;
+  opacity: 0.2;
+}
+
+/* Hide cursor on touch devices */
+@media (pointer: coarse) {
+  .cursor,
+  .cursor-follower {
+    display: none;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero animations */
+.hero-tag-animate {
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+
+.hero-h1-animate {
+  opacity: 0;
+  animation: fadeUp 0.9s 0.4s forwards;
+}
+
+.hero-sub-animate {
+  opacity: 0;
+  animation: fadeUp 0.9s 0.6s forwards;
+}
+
+.hero-cta-animate {
+  opacity: 0;
+  animation: fadeUp 0.9s 0.8s forwards;
+}
+
+.hero-handle-animate {
+  opacity: 0;
+  animation: fadeIn 1.2s 1.2s forwards;
+}
+
+.hero-scroll-animate {
+  opacity: 0;
+  animation: fadeIn 1.2s 1.4s forwards;
+}
+
+.pulse-dot {
+  animation: pulse 2s infinite;
+}
+
+/* Marquee */
+.marquee-animate {
+  animation: marquee 20s linear infinite;
+}
+
+/* Section animations */
+.section-label-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.section-label-animate.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.section-h2-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s 0.1s, transform 0.8s 0.1s;
+}
+
+.section-h2-animate.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.about-bio-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s 0.2s, transform 0.8s 0.2s;
+}
+
+.about-bio-animate.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Skill card animation */
+.skill-card-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s, background 0.3s;
+}
+
+.skill-card-animate.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Project row animation */
+.project-row-animate {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.7s, transform 0.7s, background 0.3s, border-color 0.3s;
+}
+
+.project-row-animate.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Brand card animation */
+.brand-card-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s, background 0.3s;
+}
+
+.brand-card-animate.visible {
+  opacity: 1;
+  transform: none;
+}
