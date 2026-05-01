@@ -69,7 +69,7 @@ export function Hero() {
 
       {/* Handle - Hidden on mobile */}
       <div className="hero-handle-animate absolute right-6 md:right-14 bottom-14 font-syne text-[11px] tracking-[0.25em] text-[var(--muted)] uppercase writing-mode-vertical-rl hidden md:block" style={{ writingMode: 'vertical-rl' }}>
-        @miky_media — creative portfolio
+        @mikiyas_daniel — creative portfolio
       </div>
 
       {/* Scroll indicator - Hidden on mobile */}
