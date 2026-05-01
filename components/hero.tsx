@@ -12,7 +12,7 @@ export function Hero() {
         alt="Creative portfolio background"
         fill
         priority
-        className="object-cover object-center opacity-20"
+        className="hero-image-animate object-cover object-center opacity-20 "
       />
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_70%_60%_at_70%_50%,#1a3d1e55_0%,transparent_70%),radial-gradient(ellipse_40%_40%_at_20%_80%,#f5c10008_0%,transparent_60%)]" />
       <div

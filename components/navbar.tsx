@@ -26,6 +26,7 @@ export function Navbar() {
   return (
     <nav
       className={`
+        nav-animate
         fixed top-0 left-0 right-0 z-[100]
         flex items-center justify-between
         px-6 py-5 md:px-14
@@ -36,17 +37,18 @@ export function Navbar() {
         }
       `}
     >
-      <div className="font-display font-syne text-[15px] font-bold tracking-[0.15em] text-[var(--yellow)] uppercase">
-        @miky_media
+      <div className="nav-brand-animate font-display font-syne text-[15px] font-bold tracking-[0.15em] text-[var(--yellow)] uppercase">
+        @my_digital
       </div>
       
       {/* Desktop Nav Links */}
       <div className="hidden md:flex gap-10">
-        {navLinks.map((link) => (
+        {navLinks.map((link, index) => (
           <Link
             key={link.href}
             href={link.href}
             className="
+              nav-link-animate
               text-[var(--muted)] text-[13px] tracking-[0.08em] uppercase
               no-underline relative
               transition-colors duration-[250ms]
@@ -56,6 +58,7 @@ export function Navbar() {
               after:transition-[width] after:duration-300 after:ease-in-out
               hover:after:w-full
             "
+            style={{ animationDelay: `${0.28 + index * 0.08}s` }}
           >
             {link.label}
           </Link>
@@ -65,7 +68,7 @@ export function Navbar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden flex flex-col gap-1.5 p-2"
+        className="nav-menu-btn-animate md:hidden flex flex-col gap-1.5 p-2"
         aria-label="Toggle menu"
       >
         <span className={`w-6 h-0.5 bg-[var(--yellow)] transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />

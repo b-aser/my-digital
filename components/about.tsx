@@ -1,6 +1,5 @@
 'use client'
 
-import { CameraIcon } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 
@@ -51,7 +50,7 @@ export function About() {
           src="/about_photo.jpg"
           alt="Mikiyas Daniel portrait"
           fill
-          className="object-cover object-center opacity-[0.5]"
+          className="reveal about-image-animate object-cover object-center opacity-[0.5]"
         />
         {/* Accent circles */}
         <div className="absolute -bottom-[60px] -right-[60px] w-[200px] h-[200px] md:w-[240px] md:h-[240px] rounded-full border border-[rgba(245,193,0,0.1)]" />

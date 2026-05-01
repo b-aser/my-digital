@@ -1,11 +1,19 @@
-import { InstagramIcon, MailIcon, MusicIcon, PhoneIcon, PlaneIcon } from "lucide-react"
+import { PhoneIcon } from "lucide-react"
+import { siTelegram } from "simple-icons";
+import { FaTelegram } from "react-icons/fa";
+
 
 const contactLinks = [
-  { icon: <PlaneIcon className="w-4 h-4" />, label: 'Telegram', href: '#' },
-  { icon: <InstagramIcon className="w-4 h-4" />, label: 'Instagram', href: '#' },
-  { icon: <MailIcon className="w-4 h-4" />, label: 'Email', href: '#' },
-  { icon: <MusicIcon className="w-4 h-4" />, label: 'TikTok', href: '#' },
-  { icon: <PhoneIcon className="w-4 h-4" />, label: 'Phone', href: '#' },
+  {
+    icon: <FaTelegram size={24} />, 
+    label: 'Telegram', 
+    href: 'http://t.me/mikiyasdaniel'
+  },
+  {
+    icon: <PhoneIcon className="w-5 h-5" />,
+    label: 'Phone', 
+    href: 'tel:+251993468598'
+  },
 ]
 
 export function Contact() {
@@ -16,21 +24,16 @@ export function Contact() {
     >
       {/* Background effect */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(245,193,0,0.04)_0%,transparent_70%)]" />
-      
+
       <div className="relative z-[1]">
         <div className="text-[11px] tracking-[0.25em] uppercase text-[var(--yellow)] mb-6">
           Let&apos;s Collaborate
         </div>
-        
-        <h2 className="font-syne text-[clamp(48px,9vw,120px)] font-extrabold leading-[0.9] tracking-[-0.03em] mb-8">
-          Thank<br />
-          <em className="not-italic text-[var(--yellow)]">You!</em>
-        </h2>
-        
+
         <p className="text-base text-[var(--muted)] max-w-[420px] leading-[1.7] mb-12 md:mb-14 mx-auto">
           Ready to elevate your brand&apos;s digital presence? Let&apos;s create something that doesn&apos;t just look good — it performs.
         </p>
-        
+
         <div className="flex gap-3 md:gap-6 flex-wrap justify-center mb-12 md:mb-16">
           {contactLinks.map((link) => (
             <a
@@ -51,7 +54,7 @@ export function Contact() {
             </a>
           ))}
         </div>
-        
+
         <a
           href="#hero"
           className="

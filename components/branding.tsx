@@ -1,8 +1,16 @@
 'use client'
 
-import { CoffeeIcon, ForkKnife, MedalIcon, MonitorIcon } from 'lucide-react'
+import { CoffeeIcon, ExpandIcon, MonitorIcon } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
 
 const brandProjects = [
   {
@@ -73,6 +81,35 @@ export function Branding() {
             className="brand-card reveal brand-card-animate bg-[var(--bg2)] p-10 md:p-16 md:px-14 relative overflow-hidden group hover:bg-[var(--green)] transition-colors duration-300"
             style={{ transitionDelay: project.delay }}
           >
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  size="icon-sm"
+                  variant="outline"
+                  className="absolute top-12 right-6 z-[2] border-[var(--border)] bg-[rgba(10,16,8,0.75)] text-[var(--yellow)] hover:bg-[rgba(10,16,8,0.95)]"
+                  aria-label={`Expand ${project.name} logo`}
+                >
+                  <ExpandIcon className="w-4 h-4" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent
+                className="max-w-[96vw] w-[96vw] h-[82vh] bg-[var(--bg)] border-[var(--border)] p-3"
+                showCloseButton
+              >
+                <DialogTitle className="sr-only">{project.name} logo preview</DialogTitle>
+                <DialogDescription className="sr-only">
+                  Full screen preview of the {project.name} logo.
+                </DialogDescription>
+                <div className="relative w-full h-full rounded-md overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={`${project.name} logo full screen preview`}
+                    fill
+                    className="object-contain object-center"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
             <Image
               src={project.image}
               alt={`${project.name} brand visual`}

@@ -31,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable}`} suppressHydrationWarning={true}>
-      <body className="font-sans antialiased bg-[var(--bg)]">
+    <html lang="en" className={`${syne.variable} ${dmSans.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased bg-[var(--bg)]" suppressHydrationWarning>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

@@ -50,8 +50,8 @@ body {
 /* Custom Cursor - only on desktop */
 .cursor {
   position: fixed;
-  width: 12px;
-  height: 12px;
+  width: 72px;
+  height: 72px;
   background: var(--yellow);
   border-radius: 50%;
   pointer-events: none;
@@ -63,8 +63,8 @@ body {
 
 .cursor-follower {
   position: fixed;
-  width: 36px;
-  height: 36px;
+  width: 140px;
+  height: 140px;
   border: 1.5px solid var(--yellow);
   border-radius: 50%;
   pointer-events: none;
@@ -114,6 +114,41 @@ body {
   }
 }
 
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navLinkIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageIntro {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 0.3;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
@@ -145,6 +180,26 @@ body {
 }
 
 /* Hero animations */
+.nav-animate {
+  opacity: 0;
+  animation: navSlideDown 0.7s ease-out 0.05s forwards;
+}
+
+.nav-brand-animate {
+  opacity: 0;
+  animation: navLinkIn 0.55s ease-out 0.18s forwards;
+}
+
+.nav-link-animate {
+  opacity: 0;
+  animation: navLinkIn 0.5s ease-out forwards;
+}
+
+.nav-menu-btn-animate {
+  opacity: 0;
+  animation: navLinkIn 0.55s ease-out 0.28s forwards;
+}
+
 .hero-tag-animate {
   opacity: 0;
   animation: fadeUp 0.8s 0.2s forwards;
@@ -173,6 +228,12 @@ body {
 .hero-scroll-animate {
   opacity: 0;
   animation: fadeIn 1.2s 1.4s forwards;
+}
+
+.hero-image-animate {
+  opacity: 0;
+  animation: heroImageIntro 1.3s ease-out 0.1s forwards;
+  will-change: transform, opacity, filter;
 }
 
 .pulse-dot {
@@ -216,6 +277,19 @@ body {
 .about-bio-animate.visible {
   opacity: 1;
   transform: none;
+}
+
+.about-image-animate {
+  opacity: 0;
+  transform: scale(1.04);
+  filter: blur(4px);
+  transition: opacity 1s 0.15s, transform 1s 0.15s, filter 1s 0.15s;
+}
+
+.about-image-animate.visible {
+  opacity: 0.5;
+  transform: scale(1);
+  filter: blur(0);
 }
 
 /* Skill card animation */
