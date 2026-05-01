@@ -230,7 +230,10 @@ body {
   transform: none;
 }
 
+
 /* Project row animation */
+
+
 .project-row-animate {
   opacity: 0;
   transform: translateX(-20px);

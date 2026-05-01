@@ -26,16 +26,7 @@ const projects = [
     ],
     delay: '0.15s',
   },
-  {
-    num: '03',
-    title: 'Social Media Strategy',
-    meta: 'Full-Scale Account Growth · Community Engagement · Analytics',
-    image: '/hero_bg.jpg',
-    stats: [
-      { num: '∞', label: 'Growth' },
-    ],
-    delay: '0.3s',
-  },
+
 ]
 
 export function Work() {
@@ -104,12 +95,12 @@ export function Work() {
             </div>
 
             <div className="relative z-[1] w-full">
-              <div className="relative h-[140px] md:h-[120px] rounded-lg overflow-hidden border border-[var(--border)] bg-[var(--green2)]">
+              <div className="relative h-[500px] md:h-[120px] rounded-lg overflow-hidden border border-[var(--border)] bg-[var(--green2)]">
                 <Image
                   src={project.image}
                   alt={`${project.title} screenshot`}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center w-full h-full"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(10,16,8,0.35)_100%)]" />
               </div>
