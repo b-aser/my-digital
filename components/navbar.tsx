@@ -37,10 +37,11 @@ export function Navbar() {
         }
       `}
     >
-      <div className="nav-brand-animate font-display font-syne text-[15px] font-bold tracking-[0.15em] text-[var(--yellow)] uppercase">
-        @my_digital
-      </div>
-      
+      <Link href="/" scroll={true}>
+        <div className="nav-brand-animate font-display font-syne text-[15px] font-bold tracking-[0.15em] text-[var(--yellow)] uppercase">
+          @my_digital
+        </div>
+      </Link>
       {/* Desktop Nav Links */}
       <div className="hidden md:flex gap-10">
         {navLinks.map((link, index) => (
